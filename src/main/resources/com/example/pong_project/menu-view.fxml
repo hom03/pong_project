@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Slider?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.canvas.Canvas?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.pong_project.Controller.MenuController" style="-fx-background-color: LIGHTBLUE;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="welcomeText"/>
+    <Canvas fx:id="gameCanvas"/>
+    <HBox alignment="CENTER" spacing="10.0">
+        <TextField fx:id="p1Name" promptText="Enter p1 Name" prefWidth="100"/>
+        <TextField fx:id="p2Name" promptText="Enter p2 Name" prefWidth="100"/>
+    </HBox>
+    <Label text="Ball Speed"/>
+    <HBox alignment="CENTER" spacing="10.0">
+        <Slider fx:id="ballSpeedSlider" min="1" max="10" value="5" blockIncrement="1"
+                showTickMarks="true" showTickLabels="true" majorTickUnit="1" snapToTicks="true" prefWidth="200"/>
+    </HBox>
+    <Label text="Racket Dimensions"/>
+    <HBox alignment="CENTER" spacing="10.0">
+        <Slider fx:id="racketSlider" min="1" max="10" value="5" blockIncrement="1"
+                showTickMarks="true" showTickLabels="true" majorTickUnit="1" snapToTicks="true" prefWidth="200"/>
+    </HBox>
+    <Label text="Set Final Score"/>
+    <Spinner fx:id="setScore"  prefWidth="100" editable="true">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory
+                min="1" max="15" initialValue="1"/>
+        </valueFactory>
+    </Spinner>
+    <Label text="Speed Frequency Increase"/>
+    <HBox alignment="CENTER" spacing="10.0">
+        <Slider fx:id="speedFreqSlider" min="1" max="10" value="5" blockIncrement="1"
+                showTickMarks="true" showTickLabels="true" majorTickUnit="1" snapToTicks="true" prefWidth="200"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button fx:id="onLoadGame" text="Load Game" onAction="#onLoadGame"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button fx:id="playButton" text="Save and Play" onAction="#onPlayButtonClick" prefWidth="100"/>
+        <Button text="Exit" onAction="#onExitClick" prefWidth="100"/>
+    </HBox>
+</VBox>

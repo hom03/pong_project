@@ -1,0 +1,5 @@
+module:com.example.pong_project
+com.example.pong_project
+com.example.pong_project.Controller
+com.example.pong_project.Model
+com.example.pong_project.View
